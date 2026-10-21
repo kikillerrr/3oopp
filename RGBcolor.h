@@ -4,10 +4,14 @@
 #include <iostream>
 
 class RGBColor {
+
 private:
     int red;
     int green;
     int blue;
+
+    mutable int viewCount;
+    static int colorCount;
 
 public:
     RGBColor();
