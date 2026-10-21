@@ -227,3 +227,31 @@ bool RGBColor::operator<=(const RGBColor& other) const {
 bool RGBColor::operator>=(const RGBColor& other) const {
     return getBrightness() >= other.getBrightness();
 }
+
+// Оператор сравнения: равенство по цветовым каналам
+bool RGBColor::operator==(const RGBColor& other) const {
+    return red == other.red
+        && green == other.green
+        && blue == other.blue;
+}
+
+// Оператор сравнения: неравенство через ==
+bool RGBColor::operator!=(const RGBColor& other) const {
+    return !(*this == other);
+}
+
+// Вывод информации о цвете с увеличением счётчика просмотров
+void RGBColor::printInfo() const {
+    ++viewCount;
+
+    std::cout << "RGB(" << red << ", " << green << ", " << blue << ")"
+              << " | Яркость: " << getBrightness()
+              << " | Просмотров: " << viewCount << "\n";
+}
+
+// Проверка корректности цветовых каналов (от 0 до 255)
+bool RGBColor::isValid() const {
+    return red >= 0 && red <= 255
+        && green >= 0 && green <= 255
+        && blue >= 0 && blue <= 255;
+}
