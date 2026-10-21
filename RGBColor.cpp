@@ -196,3 +196,9 @@ RGBColor& RGBColor::operator/=(int factor) {
 
     return *this;
 }
+
+//Бинарный оператор сложения двух цветов (через +=)
+RGBColor operator+(RGBColor lhs, const RGBColor& rhs) {
+    lhs += rhs;
+    return lhs;
+}
