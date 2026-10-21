@@ -31,3 +31,22 @@ RGBColor::RGBColor(int r, int g, int b)
               << green << ", " << blue << "). "
               << "Всего объектов: " << colorCount << "\n";
 }
+
+
+ // Explicit-конструктор для создания серого цвета
+RGBColor::RGBColor(int brightness)
+    : red(brightness), green(brightness),
+      blue(brightness), viewCount(0)
+{
+    if (red < 0) red = 0;
+    if (red > 255) red = 255;
+
+    green = red;
+    blue = red;
+
+    ++colorCount;
+
+    std::cout << "Создан серый цвет (" << red << ", "
+              << green << ", " << blue << "). "
+              << "Всего объектов: " << colorCount << "\n";
+}
