@@ -96,3 +96,22 @@ int RGBColor::getBrightness() const {
 int RGBColor::getColorCount() {
     return colorCount;
 }
+
+
+ // Префиксный инкремент ++color
+RGBColor& RGBColor::operator++() {
+    if (red < 255) ++red;
+    if (green < 255) ++green;
+    if (blue < 255) ++blue;
+
+    return *this;
+}
+
+// Префиксный декремент --color
+RGBColor& RGBColor::operator--() {
+    if (red > 0) --red;
+    if (green > 0) --green;
+    if (blue > 0) --blue;
+
+    return *this;
+}
