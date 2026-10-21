@@ -208,12 +208,22 @@ RGBColor operator-(RGBColor lhs, const RGBColor& rhs) {
     lhs -= rhs;
     return lhs;
 }
-// Оператор сравнения: меньше по яркости
+// Оператор сравнения меньше по яркости
 bool RGBColor::operator<(const RGBColor& other) const {
     return getBrightness() < other.getBrightness();
 }
 
-// Оператор сравнения: больше по яркости
+// Оператор сравнения больше по яркости
 bool RGBColor::operator>(const RGBColor& other) const {
     return getBrightness() > other.getBrightness();
+}
+
+// Оператор сравнения меньше или равно по яркости
+bool RGBColor::operator<=(const RGBColor& other) const {
+    return getBrightness() <= other.getBrightness();
+}
+
+// Оператор сравнения больше или равно по яркости
+bool RGBColor::operator>=(const RGBColor& other) const {
+    return getBrightness() >= other.getBrightness();
 }
