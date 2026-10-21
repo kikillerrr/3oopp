@@ -64,3 +64,12 @@ RGBColor::RGBColor(const RGBColor& other)
     std::cout << "Создан цвет (копия). "
               << "Всего объектов: " << colorCount << "\n";
 }
+
+ // Деструктор
+RGBColor::~RGBColor()
+{
+    --colorCount;
+
+    std::cout << "Удалён цвет. Осталось объектов: "
+              << colorCount << "\n";
+}
