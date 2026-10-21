@@ -175,11 +175,24 @@ RGBColor& RGBColor::operator/=(const RGBColor& other) {
     }
 
 
-    
+
     if (other.blue != 0) {
         blue = (blue * 255) / other.blue;
         if (blue > 255) blue = 255;
     }
+
+    return *this;
+}
+
+RGBColor& RGBColor::operator/=(int factor) {
+    if (factor == 0) {
+        std::cout << " Ошибка: деление на 0\n";
+        return *this;
+    }
+
+    red /= factor;
+    green /= factor;
+    blue /= factor;
 
     return *this;
 }
