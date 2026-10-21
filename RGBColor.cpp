@@ -115,3 +115,17 @@ RGBColor& RGBColor::operator--() {
 
     return *this;
 }
+
+ // Постфиксный инкремент color++
+RGBColor RGBColor::operator++(int) {
+    RGBColor old = *this;
+    ++(*this);
+    return old;
+}
+
+// Постфиксный декремент color--
+RGBColor RGBColor::operator--(int) {
+    RGBColor old = *this;
+    --(*this);
+    return old;
+}
