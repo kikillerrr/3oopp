@@ -129,3 +129,55 @@ RGBColor RGBColor::operator--(int) {
     --(*this);
     return old;
 }
+
+ // Сложение с присваиванием
+RGBColor& RGBColor::operator+=(const RGBColor& other) {
+    red += other.red;
+    green += other.green;
+    blue += other.blue;
+
+    if (red > 255) red = 255;
+    if (green > 255) green = 255;
+    if (blue > 255) blue = 255;
+
+    return *this;
+}
+
+// Вычитание с присваиванием
+RGBColor& RGBColor::operator-=(const RGBColor& other) {
+    red -= other.red;
+    green -= other.green;
+    blue -= other.blue;
+
+    if (red < 0) red = 0;
+    if (green < 0) green = 0;
+    if (blue < 0) blue = 0;
+
+    return *this;
+}
+RGBColor& RGBColor::operator*=(const RGBColor& other) {
+    red = (red * other.red) / 255;
+    green = (green * other.green) / 255;
+    blue = (blue * other.blue) / 255;
+
+    return *this;
+}
+
+RGBColor& RGBColor::operator/=(const RGBColor& other) {
+    if (other.red != 0) {
+        red = (red * 255) / other.red;
+        if (red > 255) red = 255;
+    }
+
+    if (other.green != 0) {
+        green = (green * 255) / other.green;
+        if (green > 255) green = 255;
+    }
+
+    if (other.blue != 0) {
+        blue = (blue * 255) / other.blue;
+        if (blue > 255) blue = 255;
+    }
+
+    return *this;
+}
