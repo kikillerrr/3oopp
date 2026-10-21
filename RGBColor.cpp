@@ -174,6 +174,8 @@ RGBColor& RGBColor::operator/=(const RGBColor& other) {
         if (green > 255) green = 255;
     }
 
+
+    
     if (other.blue != 0) {
         blue = (blue * 255) / other.blue;
         if (blue > 255) blue = 255;
