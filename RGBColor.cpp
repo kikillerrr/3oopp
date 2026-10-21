@@ -73,3 +73,26 @@ RGBColor::~RGBColor()
     std::cout << "Удалён цвет. Осталось объектов: "
               << colorCount << "\n";
 }
+
+ // Методы получения значений цветовых каналов
+int RGBColor::getRed() const {
+    return red;
+}
+
+int RGBColor::getGreen() const {
+    return green;
+}
+
+int RGBColor::getBlue() const {
+    return blue;
+}
+
+// Получение яркости цвета
+int RGBColor::getBrightness() const {
+    return red + green + blue;
+}
+
+// Получение количества живых объектов
+int RGBColor::getColorCount() {
+    return colorCount;
+}
