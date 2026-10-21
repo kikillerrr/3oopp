@@ -202,3 +202,9 @@ RGBColor operator+(RGBColor lhs, const RGBColor& rhs) {
     lhs += rhs;
     return lhs;
 }
+
+ // Бинарный оператор вычитания двух цветов (через -=)
+RGBColor operator-(RGBColor lhs, const RGBColor& rhs) {
+    lhs -= rhs;
+    return lhs;
+}
