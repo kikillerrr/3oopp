@@ -50,3 +50,17 @@ RGBColor::RGBColor(int brightness)
               << green << ", " << blue << "). "
               << "Всего объектов: " << colorCount << "\n";
 }
+
+
+ // Конструктор копирования
+RGBColor::RGBColor(const RGBColor& other)
+    : red(other.red),
+      green(other.green),
+      blue(other.blue),
+      viewCount(0)
+{
+    ++colorCount;
+
+    std::cout << "Создан цвет (копия). "
+              << "Всего объектов: " << colorCount << "\n";
+}
