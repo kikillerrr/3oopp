@@ -114,4 +114,26 @@ int main() {
     std::cout << "small == big: " << (small == big ? "true" : "false") << "\n";
     std::cout << "small != big: " << (small != big ? "true" : "false") << "\n";
     
-   
+    //EXPLICIT запрещает неявное преобразование числа
+    std::cout << "\n EXPLICIT\n\n";
+    // RGBColor bad = 150;
+    RGBColor good(150);
+    std::cout << "good (explicit): ";
+    good.printInfo();
+    
+
+    // MUTABLE + CONST
+    std::cout << "\n MUTABLE + CONST объект \n\n";
+    const RGBColor constColor(70, 80, 90);
+    std::cout << "constColor (const, но viewCount растёт):\n";
+    constColor.printInfo();
+    constColor.printInfo();
+    constColor.printInfo();
+    
+    // СТАТИЧЕСКИЙ СЧЁТЧИК 
+    std::cout << "\n  СТАТИЧЕСКИЙ СЧЁТЧИК \n\n";
+    std::cout << "Сколько всего цветов: " << RGBColor::getColorCount() << "\n";
+    
+    std::cout << "\n КОНЕЦ ТЕСТА \n\n";
+    return 0;
+}
